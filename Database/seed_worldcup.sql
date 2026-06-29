@@ -54,7 +54,8 @@ INSERT INTO [dbo].[Teams] ([Id], [LeagueId], [Name], [ShortName], [Logo], [Stadi
 (44, 5, N'Netherlands',  N'NED', N'https://flagcdn.com/w80/nl.png', N'MetLife Stadium'),
 (45, 5, N'Paraguay',     N'PAR', N'https://flagcdn.com/w80/py.png', N'Hard Rock Stadium'),
 (46, 5, N'Germany',      N'GER', N'https://flagcdn.com/w80/de.png', N'SoFi Stadium'),
-(47, 5, N'Sweden',       N'SWE', N'https://flagcdn.com/w80/se.png', N'Estadio Azteca');
+(47, 5, N'Sweden',       N'SWE', N'https://flagcdn.com/w80/se.png', N'Estadio Azteca'),
+(99, 5, N'TBD',          N'TBD', N'tbd-logo', N'TBD Stadium');
 SET IDENTITY_INSERT [dbo].[Teams] OFF;
 GO
 
@@ -277,90 +278,162 @@ INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDat
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
 (122, 5, 36, 37, DATEADD(MINUTE, 300, DATEADD(DAY, 1, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'BMO Field', N'Group K');
 
-
 -- Knockout Stage Bracket Matches (Round of 32)
 -- R32 1: South Africa vs Canada (Finished 0-1)
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
-(301, 5, 41, 26, CAST(@Today AS DATETIME), 'Finished', 0, 1, 90, N'MetLife Stadium', N'Round of 32', 26);
+(301, 5, 41, 26, DATEADD(DAY, -4, CAST(@Today AS DATETIME)), 'Finished', 0, 1, 90, N'MetLife Stadium', N'Round of 32', 26);
 
--- R32 2: Netherlands vs Morocco (Upcoming)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(302, 5, 44, 23, DATEADD(MINUTE, 390, DATEADD(DAY, 1, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'Estadio Azteca', N'Round of 32');
+-- R32 2: Netherlands vs Poland (Finished 1-2)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(302, 5, 44, 12, DATEADD(DAY, -4, CAST(@Today AS DATETIME)), 'Finished', 1, 2, 90, N'Estadio Azteca', N'Round of 32', 12);
 
--- R32 3: Germany vs Paraguay (Upcoming)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(303, 5, 46, 45, DATEADD(MINUTE, 120, DATEADD(DAY, 1, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'Hard Rock Stadium', N'Round of 32');
+-- R32 3: Germany vs Paraguay (Finished 2-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(303, 5, 46, 45, DATEADD(DAY, -3, CAST(@Today AS DATETIME)), 'Finished', 2, 0, 90, N'Hard Rock Stadium', N'Round of 32', 46);
 
--- R32 4: France vs Sweden (Upcoming)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(304, 5, 15, 47, DATEADD(MINUTE, 150, DATEADD(DAY, 2, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Round of 32');
+-- R32 4: France vs Sweden (Finished 3-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(304, 5, 15, 47, DATEADD(DAY, -3, CAST(@Today AS DATETIME)), 'Finished', 3, 1, 90, N'SoFi Stadium', N'Round of 32', 15);
+
+-- R32 5: Argentina vs Australia (Finished 2-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(305, 5, 11, 17, DATEADD(DAY, -3, CAST(@Today AS DATETIME)), 'Finished', 2, 1, 90, N'BMO Field', N'Round of 32', 11);
+
+-- R32 6: Denmark vs Tunisia (Finished 1-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(306, 5, 16, 18, DATEADD(DAY, -3, CAST(@Today AS DATETIME)), 'Finished', 1, 0, 90, N'Gillette Stadium', N'Round of 32', 16);
+
+-- R32 7: Brazil vs Saudi Arabia (Finished 3-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(307, 5, 19, 14, DATEADD(DAY, -2, CAST(@Today AS DATETIME)), 'Finished', 3, 0, 90, N'MetLife Stadium', N'Round of 32', 19);
+
+-- R32 8: Croatia vs Belgium (Finished AET + Pens 1-1, 2-2, 4-3 Pens)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[HomeScoreExtraTime],[AwayScoreExtraTime],[HomeScorePenalties],[AwayScorePenalties],[WinnerId]) VALUES
+(308, 5, 24, 25, DATEADD(DAY, -2, CAST(@Today AS DATETIME)), 'Finished', 1, 1, 120, N'Lincoln Financial Field', N'Round of 32', 2, 2, 4, 3, 24);
+
+-- R32 9: Morocco vs Czechia (Finished 2-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(309, 5, 23, 43, DATEADD(DAY, -2, CAST(@Today AS DATETIME)), 'Finished', 2, 0, 90, N'Lumen Field', N'Round of 32', 23);
+
+-- R32 10: Switzerland vs Iran (Finished 2-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(310, 5, 20, 39, DATEADD(DAY, -2, CAST(@Today AS DATETIME)), 'Finished', 2, 1, 90, N'Gillette Stadium', N'Round of 32', 20);
+
+-- R32 11: Mexico vs New Zealand (Finished 2-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(311, 5, 13, 40, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 2, 0, 90, N'Estadio Azteca', N'Round of 32', 13);
+
+-- R32 12: Senegal vs Portugal (Finished 1-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(312, 5, 28, 35, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 1, 0, 90, N'Mercedes-Benz Stadium', N'Round of 32', 28);
+
+-- R32 13: England vs Panama (Finished 3-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(313, 5, 32, 31, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 3, 0, 90, N'SoFi Stadium', N'Round of 32', 32);
+
+-- R32 14: Norway vs Colombia (Finished 1-2)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(314, 5, 27, 34, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 1, 2, 90, N'MetLife Stadium', N'Round of 32', 34);
+
+-- R32 15: South Korea vs Uzbekistan (Finished 1-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(315, 5, 42, 37, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 1, 0, 90, N'Arrowhead Stadium', N'Round of 32', 42);
+
+-- R32 16: Ghana vs Iraq (Finished 2-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(316, 5, 33, 29, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 2, 1, 90, N'BMO Field', N'Round of 32', 33);
 
 
 -- Knockout Stage Bracket Matches (Round of 16)
--- R16 1: Canada vs Poland (Upcoming)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(401, 5, 26, 12, DATEADD(DAY, 5, CAST(@Today AS DATETIME)), 'Upcoming', 0, 0, NULL, N'BMO Field', N'Round of 16');
+-- R16 1: Canada vs Poland (Finished 1-2)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(401, 5, 26, 12, DATEADD(DAY, -2, CAST(@Today AS DATETIME)), 'Finished', 1, 2, 90, N'BMO Field', N'Round of 16', 12);
 
--- R16 2: Argentina vs Australia (Upcoming)
+-- R16 2: Germany vs France (Finished 1-2)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(402, 5, 46, 15, DATEADD(DAY, -2, CAST(@Today AS DATETIME)), 'Finished', 1, 2, 90, N'SoFi Stadium', N'Round of 16', 15);
+
+-- R16 3: Argentina vs Denmark (Finished 2-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(403, 5, 11, 16, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 2, 1, 90, N'Hard Rock Stadium', N'Round of 16', 11);
+
+-- R16 4: Brazil vs Croatia (Finished AET + Pens 1-1, 1-1, 3-4 Pens)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[HomeScoreExtraTime],[AwayScoreExtraTime],[HomeScorePenalties],[AwayScorePenalties],[WinnerId]) VALUES
+(404, 5, 19, 24, DATEADD(DAY, -1, CAST(@Today AS DATETIME)), 'Finished', 1, 1, 120, N'MetLife Stadium', N'Round of 16', 1, 1, 3, 4, 24);
+
+-- R16 5: Morocco vs Switzerland (Finished 1-0)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(405, 5, 23, 20, CAST(@Today AS DATETIME), 'Finished', 1, 0, 90, N'Lumen Field', N'Round of 16', 23);
+
+-- R16 6: Mexico vs Senegal (Finished 2-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(406, 5, 13, 28, CAST(@Today AS DATETIME), 'Finished', 2, 1, 90, N'Mercedes-Benz Stadium', N'Round of 16', 13);
+
+-- R16 7: England vs Colombia (Upcoming)
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(402, 5, 11, 17, DATEADD(DAY, 6, CAST(@Today AS DATETIME)), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Round of 16');
+(407, 5, 32, 34, DATEADD(DAY, 1, CAST(@Today AS DATETIME)), 'Upcoming', 0, 0, NULL, N'Estadio Azteca', N'Round of 16');
+
+-- R16 8: South Korea vs Ghana (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(408, 5, 42, 33, DATEADD(DAY, 1, CAST(@Today AS DATETIME)), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Round of 16');
 
 
 -- Knockout Stage Bracket Matches (Quarter-Finals)
--- QF 1: Argentina vs Denmark (Finished AET + Pens 2-2, 3-3, 4-3 Pens)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[HomeScoreExtraTime],[AwayScoreExtraTime],[HomeScorePenalties],[AwayScorePenalties],[WinnerId]) VALUES
-(107, 5, 11, 16, DATEADD(DAY, -2, @Today), 'Finished', 2, 2, 120, N'SoFi Stadium', N'Quarter-Finals', 3, 3, 4, 3, 11);
-
--- QF 2: Brazil vs Croatia (Finished AET + Pens 0-0, 1-1, 2-4 Pens)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[HomeScoreExtraTime],[AwayScoreExtraTime],[HomeScorePenalties],[AwayScorePenalties],[WinnerId]) VALUES
-(108, 5, 19, 24, DATEADD(DAY, -2, @Today), 'Finished', 0, 0, 120, N'MetLife Stadium', N'Quarter-Finals', 1, 1, 2, 4, 24);
-
--- QF 3: France vs Mexico (Finished 2-1)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[HomeScoreExtraTime],[AwayScoreExtraTime],[HomeScorePenalties],[AwayScorePenalties],[WinnerId]) VALUES
-(109, 5, 15, 13, DATEADD(DAY, -1, @Today), 'Finished', 2, 1, 90, N'Mercedes-Benz Stadium', N'Quarter-Finals', NULL, NULL, NULL, NULL, 15);
-
--- QF 4: Morocco vs Switzerland (Finished AET 0-0, 1-0)
-INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[HomeScoreExtraTime],[AwayScoreExtraTime],[HomeScorePenalties],[AwayScorePenalties],[WinnerId]) VALUES
-(110, 5, 23, 20, DATEADD(DAY, -1, @Today), 'Finished', 0, 0, 120, N'Hard Rock Stadium', N'Quarter-Finals', 1, 0, NULL, NULL, 23);
-
-
--- Semi-Finals (Upcoming/Live - let's set them upcoming in 2 & 3 days)
--- SF 1: Argentina vs Croatia
+-- QF 1: Poland vs France (Upcoming)
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(111, 5, 11, 24, DATEADD(DAY, 2, @Today), 'Upcoming', 0, 0, NULL, N'Estadio Azteca', N'Semi-Finals');
+(107, 5, 12, 15, DATEADD(DAY, 2, @Today), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Quarter-Finals');
 
--- SF 2: France vs Morocco
+-- QF 2: Argentina vs Croatia (Upcoming)
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(112, 5, 15, 23, DATEADD(DAY, 3, @Today), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Semi-Finals');
+(108, 5, 11, 24, DATEADD(DAY, 2, @Today), 'Upcoming', 0, 0, NULL, N'MetLife Stadium', N'Quarter-Finals');
 
--- Final (Upcoming in 6 days)
+-- QF 3: Morocco vs Mexico (Upcoming)
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
-(113, 5, 11, 15, DATEADD(DAY, 6, @Today), 'Upcoming', 0, 0, NULL, N'MetLife Stadium', N'Final');
+(109, 5, 23, 13, DATEADD(DAY, 3, @Today), 'Upcoming', 0, 0, NULL, N'Mercedes-Benz Stadium', N'Quarter-Finals');
+
+-- QF 4: TBD vs TBD (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(110, 5, 99, 99, DATEADD(DAY, 3, @Today), 'Upcoming', 0, 0, NULL, N'Hard Rock Stadium', N'Quarter-Finals');
+
+
+-- Semi-Finals
+-- SF 1: TBD vs TBD (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(111, 5, 99, 99, DATEADD(DAY, 4, @Today), 'Upcoming', 0, 0, NULL, N'Estadio Azteca', N'Semi-Finals');
+
+-- SF 2: TBD vs TBD (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(112, 5, 99, 99, DATEADD(DAY, 5, @Today), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Semi-Finals');
+
+-- Final
+-- Final: TBD vs TBD (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(113, 5, 99, 99, DATEADD(DAY, 7, @Today), 'Upcoming', 0, 0, NULL, N'MetLife Stadium', N'Final');
 
 SET IDENTITY_INSERT [dbo].[Matches] OFF;
 GO
 
 -- 6. Insert Match Events
 INSERT INTO [dbo].[MatchEvents] ([MatchId],[TeamId],[PlayerId],[EventType],[Minute],[Description]) VALUES
--- QF 1 Timeline
-(107, 11,   101,   'Goal',       34, N'Lionel Messi scores a clinical penalty! Argentina leads 1-0.'),
-(107, 11,   105,   'Goal',       62, N'Julián Álvarez doubles the lead with a tap-in from Enzo''s cross.'),
-(107, 16,   133,   'Goal',       78, N'Denmark pulls one back! Andreas Christensen scores with a high header from a corner kick.'),
-(107, 16,   135,   'Goal',       88, N'Stunning equalizer by Christian Eriksen! A low shot from the edge of the area. 2-2!'),
-(107, NULL, NULL,  'HalfTime',   90, N'Full time. We are heading into Extra Time!'),
-(107, 11,   101,   'Goal',       104,N'Lionel Messi does it again! Rebound tapped in after Schmeichel''s block. 3-2 Argentina!'),
-(107, 16,   136,   'Goal',       115,N'Rasmus Højlund equalizes again! Direct free kick deflected into the net. 3-3!'),
-(107, NULL, NULL,  'Comment',    120,N'Extra time finishes. 3-3. The match will be decided by a Penalty Shootout!'),
-(107, 11,   101,   'Comment',    121,N'Messi scores his penalty for Argentina! (1-0)'),
-(107, 16,   135,   'Comment',    121,N'Christian Eriksen scores! (1-1)'),
-(107, 11,   103,   'Comment',    122,N'Enzo Fernández converts! (2-1)'),
-(107, 16,   137,   'Comment',    122,N'Emiliano Martínez saves Pierre-Emile Højbjerg''s penalty! (2-1)'),
-(107, 11,   104,   'Comment',    123,N'Mac Allister scores! (3-1)'),
-(107, 16,   133,   'Comment',    123,N'Andreas Christensen converts. (3-2)'),
-(107, 11,   NULL,  'Comment',    124,N'Argentina misses the fourth penalty! (3-2)'),
-(107, 16,   136,   'Comment',    124,N'Rasmus Højlund scores! (3-3)'),
-(107, 11,   105,   'Comment',    125,N'Julián Álvarez scores! (4-3)'),
-(107, 16,   134,   'Comment',    125,N'Emiliano Martínez saves Simon Kjær''s penalty! Argentina wins the shootout 4-3 and advances to the Semi-Finals!');
+-- R16 3 (Argentina vs Denmark) Timeline
+(403, 11,   101,   'Goal',       34, N'Lionel Messi scores a clinical penalty! Argentina leads 1-0.'),
+(403, 11,   105,   'Goal',       62, N'Julián Álvarez doubles the lead with a tap-in from Enzo''s cross.'),
+(403, 16,   133,   'Goal',       78, N'Denmark pulls one back! Andreas Christensen scores with a high header from a corner kick.'),
+(403, 16,   135,   'Goal',       88, N'Stunning equalizer by Christian Eriksen! A low shot from the edge of the area. 2-2!'),
+(403, NULL, NULL,  'HalfTime',   90, N'Full time. We are heading into Extra Time!'),
+(403, 11,   101,   'Goal',       104,N'Lionel Messi does it again! Rebound tapped in after Schmeichel''s block. 3-2 Argentina!'),
+(403, 16,   136,   'Goal',       115,N'Rasmus Højlund equalizes again! Direct free kick deflected into the net. 3-3!'),
+(403, NULL, NULL,  'Comment',    120,N'Extra time finishes. 3-3. The match will be decided by a Penalty Shootout!'),
+(403, 11,   101,   'Comment',    121,N'Messi scores his penalty for Argentina! (1-0)'),
+(403, 16,   135,   'Comment',    121,N'Christian Eriksen scores! (1-1)'),
+(403, 11,   103,   'Comment',    122,N'Enzo Fernández converts! (2-1)'),
+(403, 16,   137,   'Comment',    122,N'Emiliano Martínez saves Pierre-Emile Højbjerg''s penalty! (2-1)'),
+(403, 11,   104,   'Comment',    123,N'Mac Allister scores! (3-1)'),
+(403, 16,   133,   'Comment',    123,N'Andreas Christensen converts. (3-2)'),
+(403, 11,   NULL,  'Comment',    124,N'Argentina misses the fourth penalty! (3-2)'),
+(403, 16,   136,   'Comment',    124,N'Rasmus Højlund scores! (3-3)'),
+(403, 11,   105,   'Comment',    125,N'Julián Álvarez scores! (4-3)'),
+(403, 16,   134,   'Comment',    125,N'Emiliano Martínez saves Simon Kjær''s penalty! Argentina wins the shootout 4-3 and advances to the Quarter-Finals!');
 
 -- Norway vs France QF/Group stage events
 INSERT INTO [dbo].[MatchEvents] ([MatchId],[TeamId],[PlayerId],[EventType],[Minute],[Description]) VALUES
@@ -373,8 +446,8 @@ GO
 
 -- 7. Insert Statistics
 INSERT INTO [dbo].[MatchStatistics] ([MatchId],[TeamId],[Possession],[ShotsOnTarget],[ShotsOffTarget],[Fouls],[Corners],[YellowCards],[RedCards],[Passes],[PassAccuracy]) VALUES
-(107, 11, 52.00, 8, 4, 14, 5, 2, 0, 612, 88.50),
-(107, 16, 48.00, 6, 7, 18, 6, 3, 0, 582, 84.10),
+(403, 11, 52.00, 8, 4, 14, 5, 2, 0, 612, 88.50),
+(403, 16, 48.00, 6, 7, 18, 6, 3, 0, 582, 84.10),
 (101, 27, 40.00, 3, 4, 12, 4, 1, 0, 390, 80.00),
 (101, 15, 60.00, 11, 5, 9, 8, 1, 0, 580, 89.20);
 GO
