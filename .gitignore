@@ -1,0 +1,33 @@
+# Node / Frontend Build
+football-client/node_modules/
+football-client/dist/
+football-client/.env
+football-client/.env.local
+football-client/.env.development.local
+football-client/.env.test.local
+football-client/.env.production.local
+football-client/npm-debug.log*
+football-client/yarn-debug.log*
+football-client/yarn-error.log*
+football-client/pnpm-debug.log*
+
+# .NET / C# Build
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Database files
+Database/bin/
+Database/obj/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
