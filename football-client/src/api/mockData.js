@@ -1,5 +1,5 @@
 // ============================================================================
-// Football Live Scores - Frontend Mock Data Fallback
+// Football Live Scores - Frontend Mock Data Fallback & Live Simulator
 // Provides offline data when the backend API/DB is unreachable.
 // ============================================================================
 
@@ -60,17 +60,24 @@ export const mockTeams = {
   40: { id: 40, name: 'New Zealand', shortName: 'NZL', logo: 'https://flagcdn.com/w80/nz.png', stadium: 'MetLife Stadium' },
   41: { id: 41, name: 'South Africa', shortName: 'RSA', logo: 'https://flagcdn.com/w80/za.png', stadium: 'Mercedes-Benz Stadium' },
   42: { id: 42, name: 'South Korea', shortName: 'KOR', logo: 'https://flagcdn.com/w80/kr.png', stadium: 'SoFi Stadium' },
-  43: { id: 43, name: 'Czechia', shortName: 'CZE', logo: 'https://flagcdn.com/w80/cz.png', stadium: 'Estadio Azteca' }
+  43: { id: 43, name: 'Czechia', shortName: 'CZE', logo: 'https://flagcdn.com/w80/cz.png', stadium: 'Estadio Azteca' },
+  
+  // Additional teams from the screenshot
+  44: { id: 44, name: 'Netherlands', shortName: 'NED', logo: 'https://flagcdn.com/w80/nl.png', stadium: 'Johan Cruyff ArenA' },
+  45: { id: 45, name: 'Paraguay', shortName: 'PAR', logo: 'https://flagcdn.com/w80/py.png', stadium: 'Defensores del Chaco' },
+  46: { id: 46, name: 'Germany', shortName: 'GER', logo: 'https://flagcdn.com/w80/de.png', stadium: 'Allianz Arena' },
+  47: { id: 47, name: 'Sweden', shortName: 'SWE', logo: 'https://flagcdn.com/w80/se.png', stadium: 'Friends Arena' }
 };
 
+// Set REAL player images using stable web resources
 export const mockPlayers = {
-  6: { id: 6, teamId: 1, name: 'Bukayo Saka', position: 'Forward', number: 7, nationality: 'England', dateOfBirth: '2001-09-05', photo: '' },
-  16: { id: 16, teamId: 2, name: 'Cole Palmer', position: 'Forward', number: 20, nationality: 'England', dateOfBirth: '2002-05-06', photo: '' },
-  27: { id: 27, teamId: 3, name: 'Erling Haaland', position: 'Forward', number: 9, nationality: 'Norway', dateOfBirth: '2000-07-21', photo: '' },
-  35: { id: 35, teamId: 4, name: 'Mohamed Salah', position: 'Forward', number: 11, nationality: 'Egypt', dateOfBirth: '1992-06-15', photo: '' },
-  47: { id: 47, teamId: 5, name: 'Kylian Mbappé', position: 'Forward', number: 9, nationality: 'France', dateOfBirth: '1998-12-20', photo: '' },
-  53: { id: 53, teamId: 6, name: 'Lamine Yamal', position: 'Forward', number: 19, nationality: 'Spain', dateOfBirth: '2007-07-13', photo: '' },
-  101: { id: 101, teamId: 11, name: 'Lionel Messi', position: 'Forward', number: 10, nationality: 'Argentina', dateOfBirth: '1987-06-24', photo: '' }
+  6: { id: 6, teamId: 1, name: 'Bukayo Saka', position: 'Forward', number: 7, nationality: 'England', dateOfBirth: '2001-09-05', photo: 'https://cdn.sofifa.net/players/242/444/24_120.png' },
+  16: { id: 16, teamId: 2, name: 'Cole Palmer', position: 'Forward', number: 20, nationality: 'England', dateOfBirth: '2002-05-06', photo: 'https://cdn.sofifa.net/players/244/263/24_120.png' },
+  27: { id: 27, teamId: 3, name: 'Erling Haaland', position: 'Forward', number: 9, nationality: 'Norway', dateOfBirth: '2000-07-21', photo: 'https://cdn.sofifa.net/players/239/085/24_120.png' },
+  35: { id: 35, teamId: 4, name: 'Mohamed Salah', position: 'Forward', number: 11, nationality: 'Egypt', dateOfBirth: '1992-06-15', photo: 'https://cdn.sofifa.net/players/209/331/24_120.png' },
+  47: { id: 47, teamId: 5, name: 'Kylian Mbappé', position: 'Forward', number: 9, nationality: 'France', dateOfBirth: '1998-12-20', photo: 'https://cdn.sofifa.net/players/231/747/24_120.png' },
+  53: { id: 53, teamId: 6, name: 'Lamine Yamal', position: 'Forward', number: 19, nationality: 'Spain', dateOfBirth: '2007-07-13', photo: 'https://cdn.sofifa.net/players/277/011/24_120.png' },
+  101: { id: 101, teamId: 11, name: 'Lionel Messi', position: 'Forward', number: 10, nationality: 'Argentina', dateOfBirth: '1987-06-24', photo: 'https://cdn.sofifa.net/players/158/023/24_120.png' }
 };
 
 // Generates dynamic dates so matches appear on the schedule correctly
@@ -269,221 +276,137 @@ export const mockMatchDetails = {
 };
 
 export const mockStandings = [
-  {
-    id: 1,
-    leagueId: 5,
-    groupName: 'Group A',
-    teamId: 11,
-    team: mockTeams[11], // Argentina
-    played: 3,
-    won: 2,
-    drawn: 1,
-    lost: 0,
-    goalsFor: 6,
-    goalsAgainst: 2,
-    points: 7
-  },
-  {
-    id: 2,
-    leagueId: 5,
-    groupName: 'Group A',
-    teamId: 12,
-    team: mockTeams[12], // Poland
-    played: 3,
-    won: 1,
-    drawn: 2,
-    lost: 0,
-    goalsFor: 4,
-    goalsAgainst: 3,
-    points: 5
-  },
-  {
-    id: 3,
-    leagueId: 5,
-    groupName: 'Group A',
-    teamId: 13,
-    team: mockTeams[13], // Mexico
-    played: 3,
-    won: 1,
-    drawn: 1,
-    lost: 1,
-    goalsFor: 3,
-    goalsAgainst: 3,
-    points: 4
-  },
-  {
-    id: 4,
-    leagueId: 5,
-    groupName: 'Group A',
-    teamId: 14,
-    team: mockTeams[14], // Saudi Arabia
-    played: 3,
-    won: 0,
-    drawn: 0,
-    lost: 3,
-    goalsFor: 1,
-    goalsAgainst: 6,
-    points: 0
-  },
-  {
-    id: 5,
-    leagueId: 5,
-    groupName: 'Group B',
-    teamId: 15,
-    team: mockTeams[15], // France
-    played: 3,
-    won: 3,
-    drawn: 0,
-    lost: 0,
-    goalsFor: 9,
-    goalsAgainst: 2,
-    points: 9
-  },
-  {
-    id: 6,
-    leagueId: 5,
-    groupName: 'Group B',
-    teamId: 16,
-    team: mockTeams[16], // Denmark
-    played: 3,
-    won: 1,
-    drawn: 1,
-    lost: 1,
-    goalsFor: 4,
-    goalsAgainst: 4,
-    points: 4
-  },
-  {
-    id: 7,
-    leagueId: 5,
-    groupName: 'Group B',
-    teamId: 17,
-    team: mockTeams[17], // Australia
-    played: 3,
-    won: 1,
-    drawn: 0,
-    lost: 2,
-    goalsFor: 3,
-    goalsAgainst: 6,
-    points: 3
-  },
-  {
-    id: 8,
-    leagueId: 5,
-    groupName: 'Group B',
-    teamId: 18,
-    team: mockTeams[18], // Tunisia
-    played: 3,
-    won: 0,
-    drawn: 1,
-    lost: 2,
-    goalsFor: 1,
-    goalsAgainst: 5,
-    points: 1
-  }
+  { id: 1, leagueId: 5, groupName: 'Group A', teamId: 13, team: mockTeams[13], played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 8, goalsAgainst: 2, points: 9 },
+  { id: 2, leagueId: 5, groupName: 'Group A', teamId: 41, team: mockTeams[41], played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 4, goalsAgainst: 5, points: 4 },
+  { id: 3, leagueId: 5, groupName: 'Group A', teamId: 42, team: mockTeams[42], played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 3, goalsAgainst: 4, points: 3 },
+  { id: 4, leagueId: 5, groupName: 'Group A', teamId: 43, team: mockTeams[43], played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 6, points: 1 }
 ];
 
+// Mock Knockout Bracket (Matching the user's Google screenshots exactly!)
 export const mockBracket = [
-  // Round of 16
+  // ==================== ROUND OF 32 ====================
   {
-    id: 101,
+    id: 501,
     leagueId: 5,
-    stage: 'Round of 16',
-    matchDateTime: `${getFormattedDate(-2)}T18:00:00`,
-    homeTeamId: 11,
-    homeTeam: mockTeams[11], // Argentina
-    awayTeamId: 16,
-    awayTeam: mockTeams[16], // Denmark
-    homeScore: 2,
+    stage: 'Round of 32',
+    matchDateTime: `${getFormattedDate()}T18:00:00`,
+    homeTeamId: 41,
+    homeTeam: mockTeams[41], // South Africa
+    awayTeamId: 26,
+    awayTeam: mockTeams[26], // Canada
+    homeScore: 0,
     awayScore: 1,
     status: 'Finished',
-    nextMatchId: 201,
+    winnerId: 26,
     venue: 'MetLife Stadium'
   },
   {
-    id: 102,
+    id: 502,
     leagueId: 5,
-    stage: 'Round of 16',
-    matchDateTime: `${getFormattedDate(-2)}T21:00:00`,
-    homeTeamId: 15,
-    homeTeam: mockTeams[15], // France
-    awayTeamId: 12,
-    awayTeam: mockTeams[12], // Poland
-    homeScore: 3,
+    stage: 'Round of 32',
+    matchDateTime: `${getFormattedDate(1)}T06:30:00`,
+    homeTeamId: 44,
+    homeTeam: mockTeams[44], // Netherlands
+    awayTeamId: 23,
+    awayTeam: mockTeams[23], // Morocco
+    homeScore: 0,
     awayScore: 0,
-    status: 'Finished',
-    nextMatchId: 201,
-    venue: 'SoFi Stadium'
-  },
-  {
-    id: 103,
-    leagueId: 5,
-    stage: 'Round of 16',
-    matchDateTime: `${getFormattedDate(-1)}T18:00:00`,
-    homeTeamId: 19,
-    homeTeam: mockTeams[19], // Brazil
-    awayTeamId: 24,
-    awayTeam: mockTeams[24], // Croatia
-    homeScore: 1,
-    awayScore: 1,
-    homeScorePenalties: 4,
-    awayScorePenalties: 2,
-    status: 'Finished',
-    nextMatchId: 202,
+    status: 'Upcoming',
     venue: 'Estadio Azteca'
   },
   {
-    id: 104,
+    id: 503,
     leagueId: 5,
-    stage: 'Round of 16',
-    matchDateTime: `${getFormattedDate(-1)}T21:00:00`,
-    homeTeamId: 32,
-    homeTeam: mockTeams[32], // England
-    awayTeamId: 23,
-    awayTeam: mockTeams[23], // Morocco
-    homeScore: 2,
+    stage: 'Round of 32',
+    matchDateTime: `${getFormattedDate(1)}T02:00:00`,
+    homeTeamId: 46,
+    homeTeam: mockTeams[46], // Germany
+    awayTeamId: 45,
+    awayTeam: mockTeams[45], // Paraguay
+    homeScore: 0,
     awayScore: 0,
-    status: 'Finished',
-    nextMatchId: 202,
+    status: 'Upcoming',
     venue: 'Hard Rock Stadium'
   },
-  // Quarter-finals
   {
-    id: 201,
+    id: 504,
     leagueId: 5,
-    stage: 'Quarter-finals',
-    matchDateTime: `${getFormattedDate(1)}T18:00:00`,
-    homeTeamId: 11,
-    homeTeam: mockTeams[11], // Argentina
-    awayTeamId: 15,
-    awayTeam: mockTeams[15], // France
+    stage: 'Round of 32',
+    matchDateTime: `${getFormattedDate(2)}T02:30:00`,
+    homeTeamId: 15,
+    homeTeam: mockTeams[15], // France
+    awayTeamId: 47,
+    awayTeam: mockTeams[47], // Sweden
     homeScore: 0,
     awayScore: 0,
     status: 'Upcoming',
-    nextMatchId: 301,
-    venue: 'AT&T Stadium'
+    venue: 'SoFi Stadium'
+  },
+
+  // ==================== ROUND OF 16 ====================
+  {
+    id: 601,
+    leagueId: 5,
+    stage: 'Round of 16',
+    matchDateTime: `${getFormattedDate(5)}T22:30:00`, // Sat, 4 Jul, 10:30 pm
+    homeTeamId: 26,
+    homeTeam: mockTeams[26], // Canada
+    awayTeamId: null,
+    awayTeam: null, // TBD
+    homeScore: 0,
+    awayScore: 0,
+    status: 'Upcoming',
+    venue: 'BMO Field'
   },
   {
-    id: 202,
+    id: 602,
     leagueId: 5,
-    stage: 'Quarter-finals',
-    matchDateTime: `${getFormattedDate(2)}T18:00:00`,
-    homeTeamId: 19,
-    homeTeam: mockTeams[19], // Brazil
-    awayTeamId: 32,
-    awayTeam: mockTeams[32], // England
+    stage: 'Round of 16',
+    matchDateTime: `${getFormattedDate(6)}T02:30:00`, // Sun, 5 Jul, 2:30 am
+    homeTeamId: null,
+    homeTeam: null,
+    awayTeamId: null,
+    awayTeam: null,
     homeScore: 0,
     awayScore: 0,
     status: 'Upcoming',
-    nextMatchId: 301,
+    venue: 'SoFi Stadium'
+  },
+
+  // ==================== QUARTER-FINALS ====================
+  {
+    id: 701,
+    leagueId: 5,
+    stage: 'Quarter-Finals',
+    matchDateTime: `${getFormattedDate(11)}T01:30:00`, // Fri, 10 Jul, 1:30 am
+    homeTeamId: null,
+    homeTeam: null,
+    awayTeamId: null,
+    awayTeam: null,
+    homeScore: 0,
+    awayScore: 0,
+    status: 'Upcoming',
+    venue: 'Lincoln Financial Field'
+  },
+  {
+    id: 702,
+    leagueId: 5,
+    stage: 'Quarter-Finals',
+    matchDateTime: `${getFormattedDate(12)}T00:30:00`, // Sat, 11 Jul, 12:30 am
+    homeTeamId: null,
+    homeTeam: null,
+    awayTeamId: null,
+    awayTeam: null,
+    homeScore: 0,
+    awayScore: 0,
+    status: 'Upcoming',
     venue: 'Gillette Stadium'
   },
-  // Semi-finals
   {
-    id: 301,
+    id: 703,
     leagueId: 5,
-    stage: 'Semi-finals',
-    matchDateTime: `${getFormattedDate(4)}T20:00:00`,
+    stage: 'Quarter-Finals',
+    matchDateTime: `${getFormattedDate(13)}T02:30:00`, // Sun, 12 Jul, 2:30 am
     homeTeamId: null,
     homeTeam: null,
     awayTeamId: null,
@@ -491,15 +414,13 @@ export const mockBracket = [
     homeScore: 0,
     awayScore: 0,
     status: 'Upcoming',
-    nextMatchId: 401,
     venue: 'Mercedes-Benz Stadium'
   },
-  // Finals
   {
-    id: 401,
+    id: 704,
     leagueId: 5,
-    stage: 'Finals',
-    matchDateTime: `${getFormattedDate(7)}T19:00:00`,
+    stage: 'Quarter-Finals',
+    matchDateTime: `${getFormattedDate(13)}T06:30:00`, // Sun, 12 Jul, 6:30 am
     homeTeamId: null,
     homeTeam: null,
     awayTeamId: null,
@@ -507,7 +428,52 @@ export const mockBracket = [
     homeScore: 0,
     awayScore: 0,
     status: 'Upcoming',
-    nextMatchId: null,
+    venue: 'Arrowhead Stadium'
+  },
+
+  // ==================== SEMI-FINALS ====================
+  {
+    id: 801,
+    leagueId: 5,
+    stage: 'Semi-Finals',
+    matchDateTime: `${getFormattedDate(16)}T00:30:00`, // 15 Jul, 12:30 am
+    homeTeamId: null,
+    homeTeam: null,
+    awayTeamId: null,
+    awayTeam: null,
+    homeScore: 0,
+    awayScore: 0,
+    status: 'Upcoming',
+    venue: 'SoFi Stadium'
+  },
+  {
+    id: 802,
+    leagueId: 5,
+    stage: 'Semi-Finals',
+    matchDateTime: `${getFormattedDate(17)}T00:30:00`, // 16 Jul, 12:30 am
+    homeTeamId: null,
+    homeTeam: null,
+    awayTeamId: null,
+    awayTeam: null,
+    homeScore: 0,
+    awayScore: 0,
+    status: 'Upcoming',
+    venue: 'MetLife Stadium'
+  },
+
+  // ==================== FINAL ====================
+  {
+    id: 901,
+    leagueId: 5,
+    stage: 'Final',
+    matchDateTime: `${getFormattedDate(21)}T00:30:00`, // 20 Jul, 12:30 am
+    homeTeamId: null,
+    homeTeam: null,
+    awayTeamId: null,
+    awayTeam: null,
+    homeScore: 0,
+    awayScore: 0,
+    status: 'Upcoming',
     venue: 'MetLife Stadium'
   }
 ];
@@ -517,3 +483,28 @@ export const searchMockPlayers = (q) => {
   if (!query) return [];
   return Object.values(mockPlayers).filter(p => p.name.toLowerCase().includes(query));
 };
+
+// ==================== LIVE SCORE SIMULATOR ====================
+// Dynamically updates live match scores and minutes in memory.
+// Since Vite imports are cached singletons, this updates the data for subsequent queries.
+setInterval(() => {
+  mockLiveMatches.forEach(match => {
+    if (match.status === 'Live') {
+      // Increment minute
+      if (match.minute < 90) {
+        match.minute += 1;
+      }
+      
+      // Randomly score a goal (3% chance every 10 seconds)
+      if (Math.random() < 0.03 && match.minute < 90) {
+        const isHome = Math.random() < 0.5;
+        if (isHome) {
+          match.homeScore += 1;
+        } else {
+          match.awayScore += 1;
+        }
+        console.log(`[SimulatorHub] GOAL! Live update: ${match.homeTeam.name} ${match.homeScore} - ${match.awayScore} ${match.awayTeam.name} (${match.minute}')`);
+      }
+    }
+  });
+}, 10000);
