@@ -458,12 +458,26 @@ export const mockMatchDetails = {
   }
 };
 
-export const mockStandings = [
-  { id: 1, leagueId: 5, groupName: 'Group A', teamId: 13, team: mockTeams[13], played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 8, goalsAgainst: 2, points: 9 },
-  { id: 2, leagueId: 5, groupName: 'Group A', teamId: 41, team: mockTeams[41], played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 4, goalsAgainst: 5, points: 4 },
-  { id: 3, leagueId: 5, groupName: 'Group A', teamId: 42, team: mockTeams[42], played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 3, goalsAgainst: 4, points: 3 },
-  { id: 4, leagueId: 5, groupName: 'Group A', teamId: 43, team: mockTeams[43], played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 6, points: 1 }
-];
+export const mockStandings = {
+  'Group A': [
+    { id: 1, leagueId: 5, groupName: 'Group A', teamId: 13, team: mockTeams[13], played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 8, goalsAgainst: 2, goalDifference: 6, points: 9 },
+    { id: 2, leagueId: 5, groupName: 'Group A', teamId: 41, team: mockTeams[41], played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 4, goalsAgainst: 5, goalDifference: -1, points: 4 },
+    { id: 3, leagueId: 5, groupName: 'Group A', teamId: 42, team: mockTeams[42], played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 3, goalsAgainst: 4, goalDifference: -1, points: 3 },
+    { id: 4, leagueId: 5, groupName: 'Group A', teamId: 43, team: mockTeams[43], played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 6, goalDifference: -4, points: 1 }
+  ],
+  'Group G': [
+    { id: 5, leagueId: 5, groupName: 'Group G', teamId: 25, team: mockTeams[25], played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 5, goalsAgainst: 1, goalDifference: 4, points: 3 },
+    { id: 6, leagueId: 5, groupName: 'Group G', teamId: 38, team: mockTeams[38], played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDifference: 0, points: 1 },
+    { id: 7, leagueId: 5, groupName: 'Group G', teamId: 39, team: mockTeams[39], played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDifference: 0, points: 1 },
+    { id: 8, leagueId: 5, groupName: 'Group G', teamId: 40, team: mockTeams[40], played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 5, goalDifference: -4, points: 0 }
+  ],
+  'Group I': [
+    { id: 9, leagueId: 5, groupName: 'Group I', teamId: 28, team: mockTeams[28], played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 5, goalsAgainst: 0, goalDifference: 5, points: 3 },
+    { id: 10, leagueId: 5, groupName: 'Group I', teamId: 15, team: mockTeams[15], played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 4, goalsAgainst: 1, goalDifference: 3, points: 3 },
+    { id: 11, leagueId: 5, groupName: 'Group I', teamId: 27, team: mockTeams[27], played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 4, goalDifference: -3, points: 0 },
+    { id: 12, leagueId: 5, groupName: 'Group I', teamId: 29, team: mockTeams[29], played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 0, goalsAgainst: 5, goalDifference: -5, points: 0 }
+  ]
+};
 
 // Grouped bracket mock data matching exact response format expected from controller: List<BracketRoundDto>
 export const mockBracket = [

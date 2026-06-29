@@ -1,4 +1,5 @@
 import React from 'react';
+import { Shield } from 'lucide-react';
 
 // Configuration of team colors for high-quality SVG/CSS emblems
 const TEAM_CONFIGS = {
@@ -43,6 +44,24 @@ export function TeamBadge({ shortName, logo, size = 'md' }) {
         alt={shortName}
         className={`${imgSizeClasses[size]} rounded-full object-cover border-slate-700/20 shadow-lg flex-shrink-0 select-none transition-transform hover:scale-105`}
       />
+    );
+  }
+
+  // Handle TBD (To Be Decided) placeholders with a professional grey shield icon
+  if (!shortName || shortName.toUpperCase() === 'TBD') {
+    const shieldSizes = {
+      sm: 'h-3.5 w-3.5',
+      md: 'h-5 w-5',
+      lg: 'h-8 w-8',
+      xl: 'h-12 w-12',
+    };
+    return (
+      <div 
+        className={`rounded-full flex items-center justify-center bg-slate-800/60 text-slate-400 border border-slate-700/40 shadow-inner flex-shrink-0 select-none ${imgSizeClasses[size]}`}
+        title="To Be Decided"
+      >
+        <Shield className={`${shieldSizes[size]} opacity-60 stroke-[1.8]`} />
+      </div>
     );
   }
 
