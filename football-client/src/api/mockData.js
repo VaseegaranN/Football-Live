@@ -484,197 +484,57 @@ export const mockBracket = [
   {
     roundName: 'Round of 32',
     matches: [
-      {
-        id: 301,
-        leagueId: 5,
-        stage: 'Round of 32',
-        matchDateTime: `${getFormattedDate()}T18:00:00`,
-        homeTeam: mockTeams[41], // South Africa
-        awayTeam: mockTeams[26], // Canada
-        homeScore: 0,
-        awayScore: 1,
-        status: 'Finished',
-        winnerId: 26,
-        venue: 'MetLife Stadium'
-      },
-      {
-        id: 302,
-        leagueId: 5,
-        stage: 'Round of 32',
-        matchDateTime: `${getFormattedDate(1)}T06:30:00`,
-        homeTeam: mockTeams[44], // Netherlands
-        awayTeam: mockTeams[23], // Morocco
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'Estadio Azteca'
-      },
-      {
-        id: 303,
-        leagueId: 5,
-        stage: 'Round of 32',
-        matchDateTime: `${getFormattedDate(1)}T02:00:00`,
-        homeTeam: mockTeams[46], // Germany
-        awayTeam: mockTeams[45], // Paraguay
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'Hard Rock Stadium'
-      },
-      {
-        id: 304,
-        leagueId: 5,
-        stage: 'Round of 32',
-        matchDateTime: `${getFormattedDate(2)}T02:30:00`,
-        homeTeam: mockTeams[15], // France
-        awayTeam: mockTeams[47], // Sweden
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'SoFi Stadium'
-      }
+      { id: 301, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-4)}T18:00:00`, homeTeam: mockTeams[41], awayTeam: mockTeams[26], homeScore: 0, awayScore: 1, status: 'Finished', winnerId: 26, venue: 'MetLife Stadium' },
+      { id: 302, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-4)}T21:00:00`, homeTeam: mockTeams[44], awayTeam: mockTeams[12], homeScore: 1, awayScore: 2, status: 'Finished', winnerId: 12, venue: 'Estadio Azteca' },
+      { id: 303, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-3)}T18:00:00`, homeTeam: mockTeams[46], awayTeam: mockTeams[45], homeScore: 2, awayScore: 0, status: 'Finished', winnerId: 46, venue: 'Hard Rock Stadium' },
+      { id: 304, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-3)}T21:00:00`, homeTeam: mockTeams[15], awayTeam: mockTeams[47], homeScore: 3, awayScore: 1, status: 'Finished', winnerId: 15, venue: 'SoFi Stadium' },
+      { id: 305, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-3)}T12:00:00`, homeTeam: mockTeams[11], awayTeam: mockTeams[17], homeScore: 2, awayScore: 1, status: 'Finished', winnerId: 11, venue: 'BMO Field' },
+      { id: 306, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-3)}T15:00:00`, homeTeam: mockTeams[16], awayTeam: mockTeams[18], homeScore: 1, awayScore: 0, status: 'Finished', winnerId: 16, venue: 'Gillette Stadium' },
+      { id: 307, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-2)}T12:00:00`, homeTeam: mockTeams[19], awayTeam: mockTeams[14], homeScore: 3, awayScore: 0, status: 'Finished', winnerId: 19, venue: 'MetLife Stadium' },
+      { id: 308, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-2)}T15:00:00`, homeTeam: mockTeams[24], awayTeam: mockTeams[25], homeScore: 1, awayScore: 1, homeScoreExtraTime: 2, awayScoreExtraTime: 2, homeScorePenalties: 4, awayScorePenalties: 3, status: 'Finished', winnerId: 24, venue: 'Lincoln Financial Field' },
+      { id: 309, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-2)}T18:00:00`, homeTeam: mockTeams[23], awayTeam: mockTeams[43], homeScore: 2, awayScore: 0, status: 'Finished', winnerId: 23, venue: 'Lumen Field' },
+      { id: 310, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-2)}T21:00:00`, homeTeam: mockTeams[20], awayTeam: mockTeams[39], homeScore: 2, awayScore: 1, status: 'Finished', winnerId: 20, venue: 'Gillette Stadium' },
+      { id: 311, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-1)}T12:00:00`, homeTeam: mockTeams[13], awayTeam: mockTeams[40], homeScore: 2, awayScore: 0, status: 'Finished', winnerId: 13, venue: 'Estadio Azteca' },
+      { id: 312, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-1)}T15:00:00`, homeTeam: mockTeams[28], awayTeam: mockTeams[35], homeScore: 1, awayScore: 0, status: 'Finished', winnerId: 28, venue: 'Mercedes-Benz Stadium' },
+      { id: 313, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-1)}T18:00:00`, homeTeam: mockTeams[32], awayTeam: mockTeams[31], homeScore: 3, awayScore: 0, status: 'Finished', winnerId: 32, venue: 'SoFi Stadium' },
+      { id: 314, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-1)}T21:00:00`, homeTeam: mockTeams[27], awayTeam: mockTeams[34], homeScore: 1, awayScore: 2, status: 'Finished', winnerId: 34, venue: 'MetLife Stadium' },
+      { id: 315, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-1)}T19:00:00`, homeTeam: mockTeams[42], awayTeam: mockTeams[37], homeScore: 1, awayScore: 0, status: 'Finished', winnerId: 42, venue: 'Arrowhead Stadium' },
+      { id: 316, leagueId: 5, stage: 'Round of 32', matchDateTime: `${getFormattedDate(-1)}T20:00:00`, homeTeam: mockTeams[33], awayTeam: mockTeams[29], homeScore: 2, awayScore: 1, status: 'Finished', winnerId: 33, venue: 'BMO Field' }
     ]
   },
   {
     roundName: 'Round of 16',
     matches: [
-      {
-        id: 401,
-        leagueId: 5,
-        stage: 'Round of 16',
-        matchDateTime: `${getFormattedDate(5)}T22:30:00`, // Sat, 4 Jul, 10:30 pm
-        homeTeam: mockTeams[26], // Canada
-        awayTeam: null, // TBD
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'BMO Field'
-      },
-      {
-        id: 402,
-        leagueId: 5,
-        stage: 'Round of 16',
-        matchDateTime: `${getFormattedDate(6)}T02:30:00`, // Sun, 5 Jul, 2:30 am
-        homeTeam: null,
-        awayTeam: null,
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'SoFi Stadium'
-      }
+      { id: 401, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate(-2)}T10:00:00`, homeTeam: mockTeams[26], awayTeam: mockTeams[12], homeScore: 1, awayScore: 2, status: 'Finished', winnerId: 12, venue: 'BMO Field' },
+      { id: 402, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate(-2)}T14:30:00`, homeTeam: mockTeams[46], awayTeam: mockTeams[15], homeScore: 1, awayScore: 2, status: 'Finished', winnerId: 15, venue: 'SoFi Stadium' },
+      { id: 403, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate(-1)}T10:00:00`, homeTeam: mockTeams[11], awayTeam: mockTeams[16], homeScore: 2, awayScore: 1, status: 'Finished', winnerId: 11, venue: 'Hard Rock Stadium' },
+      { id: 404, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate(-1)}T14:30:00`, homeTeam: mockTeams[19], awayTeam: mockTeams[24], homeScore: 1, awayScore: 1, homeScoreExtraTime: 1, awayScoreExtraTime: 1, homeScorePenalties: 3, awayScorePenalties: 4, status: 'Finished', winnerId: 24, venue: 'MetLife Stadium' },
+      { id: 405, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate()}T10:00:00`, homeTeam: mockTeams[23], awayTeam: mockTeams[20], homeScore: 1, awayScore: 0, status: 'Finished', winnerId: 23, venue: 'Lumen Field' },
+      { id: 406, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate()}T14:30:00`, homeTeam: mockTeams[13], awayTeam: mockTeams[28], homeScore: 2, awayScore: 1, status: 'Finished', winnerId: 13, venue: 'Mercedes-Benz Stadium' },
+      { id: 407, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate(1)}T10:00:00`, homeTeam: mockTeams[32], awayTeam: mockTeams[34], homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'Estadio Azteca' },
+      { id: 408, leagueId: 5, stage: 'Round of 16', matchDateTime: `${getFormattedDate(1)}T14:30:00`, homeTeam: mockTeams[42], awayTeam: mockTeams[33], homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'SoFi Stadium' }
     ]
   },
   {
     roundName: 'Quarter-Finals',
     matches: [
-      {
-        id: 107,
-        leagueId: 5,
-        stage: 'Quarter-Finals',
-        matchDateTime: `${getFormattedDate(-2)}T18:00:00`,
-        homeTeam: mockTeams[11], // Argentina
-        awayTeam: mockTeams[16], // Denmark
-        homeScore: 2,
-        awayScore: 2,
-        homeScoreExtraTime: 3,
-        awayScoreExtraTime: 3,
-        homeScorePenalties: 4,
-        awayScorePenalties: 3,
-        status: 'Finished',
-        winnerId: 11,
-        venue: 'SoFi Stadium'
-      },
-      {
-        id: 108,
-        leagueId: 5,
-        stage: 'Quarter-Finals',
-        matchDateTime: `${getFormattedDate(-2)}T21:00:00`,
-        homeTeam: mockTeams[19], // Brazil
-        awayTeam: mockTeams[24], // Croatia
-        homeScore: 0,
-        awayScore: 0,
-        homeScoreExtraTime: 1,
-        awayScoreExtraTime: 1,
-        homeScorePenalties: 2,
-        awayScorePenalties: 4,
-        status: 'Finished',
-        winnerId: 24,
-        venue: 'MetLife Stadium'
-      },
-      {
-        id: 109,
-        leagueId: 5,
-        stage: 'Quarter-Finals',
-        matchDateTime: `${getFormattedDate(-1)}T18:00:00`,
-        homeTeam: mockTeams[15], // France
-        awayTeam: mockTeams[13], // Mexico
-        homeScore: 2,
-        awayScore: 1,
-        status: 'Finished',
-        winnerId: 15,
-        venue: 'Mercedes-Benz Stadium'
-      },
-      {
-        id: 110,
-        leagueId: 5,
-        stage: 'Quarter-Finals',
-        matchDateTime: `${getFormattedDate(-1)}T21:00:00`,
-        homeTeam: mockTeams[23], // Morocco
-        awayTeam: mockTeams[20], // Switzerland
-        homeScore: 0,
-        awayScore: 0,
-        homeScoreExtraTime: 1,
-        awayScoreExtraTime: 0,
-        status: 'Finished',
-        winnerId: 23,
-        venue: 'Hard Rock Stadium'
-      }
+      { id: 107, leagueId: 5, stage: 'Quarter-Finals', matchDateTime: `${getFormattedDate(2)}T18:00:00`, homeTeam: mockTeams[12], awayTeam: mockTeams[15], homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'SoFi Stadium' },
+      { id: 108, leagueId: 5, stage: 'Quarter-Finals', matchDateTime: `${getFormattedDate(2)}T21:00:00`, homeTeam: mockTeams[11], awayTeam: mockTeams[24], homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'MetLife Stadium' },
+      { id: 109, leagueId: 5, stage: 'Quarter-Finals', matchDateTime: `${getFormattedDate(3)}T18:00:00`, homeTeam: mockTeams[23], awayTeam: mockTeams[13], homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'Mercedes-Benz Stadium' },
+      { id: 110, leagueId: 5, stage: 'Quarter-Finals', matchDateTime: `${getFormattedDate(3)}T21:00:00`, homeTeam: null, awayTeam: null, homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'Hard Rock Stadium' }
     ]
   },
   {
     roundName: 'Semi-Finals',
     matches: [
-      {
-        id: 111,
-        leagueId: 5,
-        stage: 'Semi-Finals',
-        matchDateTime: `${getFormattedDate(2)}T18:00:00`,
-        homeTeam: mockTeams[11], // Argentina
-        awayTeam: mockTeams[24], // Croatia
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'Estadio Azteca'
-      },
-      {
-        id: 112,
-        leagueId: 5,
-        stage: 'Semi-Finals',
-        matchDateTime: `${getFormattedDate(3)}T18:00:00`,
-        homeTeam: mockTeams[15], // France
-        awayTeam: mockTeams[23], // Morocco
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'SoFi Stadium'
-      }
+      { id: 111, leagueId: 5, stage: 'Semi-Finals', matchDateTime: `${getFormattedDate(4)}T18:00:00`, homeTeam: null, awayTeam: null, homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'Estadio Azteca' },
+      { id: 112, leagueId: 5, stage: 'Semi-Finals', matchDateTime: `${getFormattedDate(5)}T18:00:00`, homeTeam: null, awayTeam: null, homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'SoFi Stadium' }
     ]
   },
   {
     roundName: 'Final',
     matches: [
-      {
-        id: 113,
-        leagueId: 5,
-        stage: 'Final',
-        matchDateTime: `${getFormattedDate(6)}T19:00:00`,
-        homeTeam: mockTeams[11], // Argentina
-        awayTeam: mockTeams[15], // France
-        homeScore: 0,
-        awayScore: 0,
-        status: 'Upcoming',
-        venue: 'MetLife Stadium'
-      }
+      { id: 113, leagueId: 5, stage: 'Final', matchDateTime: `${getFormattedDate(7)}T19:00:00`, homeTeam: null, awayTeam: null, homeScore: 0, awayScore: 0, status: 'Upcoming', venue: 'MetLife Stadium' }
     ]
   }
 ];
