@@ -50,7 +50,11 @@ INSERT INTO [dbo].[Teams] ([Id], [LeagueId], [Name], [ShortName], [Logo], [Stadi
 (40, 5, N'New Zealand',  N'NZL', N'https://flagcdn.com/w80/nz.png', N'MetLife Stadium'),
 (41, 5, N'South Africa', N'RSA', N'https://flagcdn.com/w80/za.png', N'Mercedes-Benz Stadium'),
 (42, 5, N'South Korea',  N'KOR', N'https://flagcdn.com/w80/kr.png', N'SoFi Stadium'),
-(43, 5, N'Czechia',      N'CZE', N'https://flagcdn.com/w80/cz.png', N'Estadio Azteca');
+(43, 5, N'Czechia',      N'CZE', N'https://flagcdn.com/w80/cz.png', N'Estadio Azteca'),
+(44, 5, N'Netherlands',  N'NED', N'https://flagcdn.com/w80/nl.png', N'MetLife Stadium'),
+(45, 5, N'Paraguay',     N'PAR', N'https://flagcdn.com/w80/py.png', N'Hard Rock Stadium'),
+(46, 5, N'Germany',      N'GER', N'https://flagcdn.com/w80/de.png', N'SoFi Stadium'),
+(47, 5, N'Sweden',       N'SWE', N'https://flagcdn.com/w80/se.png', N'Estadio Azteca');
 SET IDENTITY_INSERT [dbo].[Teams] OFF;
 GO
 
@@ -272,6 +276,34 @@ INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDat
 -- Group K: DR Congo vs Uzbekistan (Tomorrow at 5:00 AM)
 INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
 (122, 5, 36, 37, DATEADD(MINUTE, 300, DATEADD(DAY, 1, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'BMO Field', N'Group K');
+
+
+-- Knockout Stage Bracket Matches (Round of 32)
+-- R32 1: South Africa vs Canada (Finished 0-1)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage],[WinnerId]) VALUES
+(301, 5, 41, 26, CAST(@Today AS DATETIME), 'Finished', 0, 1, 90, N'MetLife Stadium', N'Round of 32', 26);
+
+-- R32 2: Netherlands vs Morocco (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(302, 5, 44, 23, DATEADD(MINUTE, 390, DATEADD(DAY, 1, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'Estadio Azteca', N'Round of 32');
+
+-- R32 3: Germany vs Paraguay (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(303, 5, 46, 45, DATEADD(MINUTE, 120, DATEADD(DAY, 1, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'Hard Rock Stadium', N'Round of 32');
+
+-- R32 4: France vs Sweden (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(304, 5, 15, 47, DATEADD(MINUTE, 150, DATEADD(DAY, 2, CAST(@Today AS DATETIME))), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Round of 32');
+
+
+-- Knockout Stage Bracket Matches (Round of 16)
+-- R16 1: Canada vs Poland (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(401, 5, 26, 12, DATEADD(DAY, 5, CAST(@Today AS DATETIME)), 'Upcoming', 0, 0, NULL, N'BMO Field', N'Round of 16');
+
+-- R16 2: Argentina vs Australia (Upcoming)
+INSERT INTO [dbo].[Matches] ([Id],[LeagueId],[HomeTeamId],[AwayTeamId],[MatchDateTime],[Status],[HomeScore],[AwayScore],[Minute],[Venue],[Stage]) VALUES
+(402, 5, 11, 17, DATEADD(DAY, 6, CAST(@Today AS DATETIME)), 'Upcoming', 0, 0, NULL, N'SoFi Stadium', N'Round of 16');
 
 
 -- Knockout Stage Bracket Matches (Quarter-Finals)

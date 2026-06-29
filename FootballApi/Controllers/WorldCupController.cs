@@ -61,7 +61,7 @@ public class WorldCupController : ControllerBase
             .ToListAsync();
 
         // Sequential knockout stages order
-        var stageOrder = new List<string> { "Round of 16", "Quarter-Finals", "Semi-Finals", "Final" };
+        var stageOrder = new List<string> { "Round of 32", "Round of 16", "Quarter-Finals", "Semi-Finals", "Final" };
 
         var bracket = matches
             .GroupBy(m => m.Stage!)
