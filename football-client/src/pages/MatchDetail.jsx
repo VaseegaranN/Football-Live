@@ -153,10 +153,16 @@ export default function MatchDetail() {
   useEffect(() => {
     if (activeTab === 'lineups' && match && !homeTeam && !awayTeam && !loadingSquads) {
       setLoadingSquads(true);
-      Promise.all([
-        teamsApi.getById(match.homeTeam.id),
-        teamsApi.getById(match.awayTeam.id),
-      ])
+      
+      const homePromise = match.homeTeam && match.homeTeam.id && match.homeTeam.id !== 99
+        ? teamsApi.getById(match.homeTeam.id)
+        : Promise.resolve({ data: null });
+        
+      const awayPromise = match.awayTeam && match.awayTeam.id && match.awayTeam.id !== 99
+        ? teamsApi.getById(match.awayTeam.id)
+        : Promise.resolve({ data: null });
+
+      Promise.all([homePromise, awayPromise])
         .then(([homeRes, awayRes]) => {
           setHomeTeam(homeRes.data);
           setAwayTeam(awayRes.data);
